@@ -1,12 +1,11 @@
 [
 {
-  "modid": "testmod",
-  "name": "testmod Xtreme",
-  "description": "testmod für forge",
-  "version": "1.0",
-  "mcversion": "${mcversion}",
-  "url": "testmodurl.wtf",
-  "updateUrl": "update.testmodurl.wtf",
+  "modid": "LCCraft",
+  "name": "LightCrystalCraft",
+  "description": "Light Crystal Craft",
+  "version": "0.0.1",
+  "mcversion": "1.7.2",
+  "url": "not set yet!",
   "authors": ["Nemare" , "Shindoras"],
   "credits": "Maybe Zounds will help... (but not for sure)",
   "logoFile": "yay.jpg",
