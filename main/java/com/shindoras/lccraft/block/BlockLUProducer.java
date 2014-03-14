@@ -14,6 +14,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
@@ -34,10 +35,8 @@ public class BlockLUProducer extends Block
 	public static IIcon backIcon;
 	public static IIcon leftIcon;
 	public static IIcon rightIcon;
-	public static int playerDirection;
 	
 	@SideOnly(Side.CLIENT)
-	@Override
 	public void registerBlockIcons(IIconRegister par1IconRegister)
     {
         this.topIcon = par1IconRegister.registerIcon(LCCraft.MODID + ":" + "LUProducer" +"_top");
@@ -49,42 +48,98 @@ public class BlockLUProducer extends Block
     }
 	
 	@SideOnly(Side.CLIENT)
-	@Override
 	public IIcon getIcon(int side, int metadata)
-	{
-		/*switch(metadata)
-		{
-			case 0: return sideIcon;
-			case 1: */		
-		System.out.println(side);
-				switch(side)
-				{
-					case 0: return downIcon;
-					case 1: return topIcon;
-					case 2: return frontIcon;
-					case 3: return backIcon;
-					case 4: return rightIcon;
-					case 5: return leftIcon;
-					default: return frontIcon;
-						
-							
-				}
-		//}		
+	{	
+		System.out.println(metadata);
+		
+		if(metadata == 0){
+			switch(side)
+			{
+				case 0: return downIcon;
+				case 1: return topIcon;
+				case 2: return frontIcon;
+				case 3: return backIcon;
+				case 4: return rightIcon;
+				case 5: return leftIcon;
+			}
+		}
+		if(metadata == 1){
+			switch(side)
+			{
+				case 0: return downIcon;
+				case 1: return topIcon;
+				case 2: return rightIcon;
+				case 3: return leftIcon;
+				case 4: return backIcon;
+				case 5: return frontIcon;
+			}
+		}
+		if(metadata == 2){
+			switch(side)
+			{
+				case 0: return downIcon;
+				case 1: return topIcon;
+				case 2: return backIcon;
+				case 3: return frontIcon;
+				case 4: return leftIcon;
+				case 5: return rightIcon;
+			}
+		}
+		if(metadata == 3){
+			switch(side)
+			{
+				
+				case 0: return downIcon;
+				case 1: return topIcon;
+				case 2: return leftIcon;
+				case 3: return rightIcon;
+				case 4: return frontIcon;
+				case 5: return backIcon;
+			}
+		}
+
+			return frontIcon;
+											
 	}
 	
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase p_149689_5_, ItemStack p_149689_6_)
-	{
-	    int metadata = world.getBlockMetadata(x, y, z);
-	    playerDirection = MathHelper.floor_double((double)((p_149689_5_.rotationYaw * 4F) / 360F) + 0.5D) & 3;	    
-	    System.out.println(playerDirection);
-	}
+//	@SideOnly(Side.CLIENT)
+//	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase p_149689_5_, ItemStack p_149689_6_)
+//	{
+//	    int metadata = world.getBlockMetadata(x, y, z);
+//	    playerDirection = MathHelper.floor_double((double)((p_149689_5_.rotationYaw * 4F) / 360F) + 0.5D) & 3;	    
+//	    System.out.println(playerDirection);
+//	    
+//	}
 	
-	 
+	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase elb, ItemStack is)
+    {
+        int l = MathHelper.floor_double((double)(elb.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+
+        if (l == 0)
+        {
+            world.setBlockMetadataWithNotify(x, y, z, 0, 2);
+            
+        }
+
+        if (l == 1)
+        {
+            world.setBlockMetadataWithNotify(x, y, z, 1, 2);
+           
+        }
+
+        if (l == 2)
+        {
+            world.setBlockMetadataWithNotify(x, y, z, 2, 2);
+           
+        }
+
+        if (l == 3)
+        {
+            world.setBlockMetadataWithNotify(x, y, z, 3, 2);
+           
+        }
 	
-	
-	
+    }
 	
 	/*@SideOnly(Side.CLIENT)
 	private Icon[] icons;
