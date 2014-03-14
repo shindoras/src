@@ -11,6 +11,6 @@ public class ItemCrystallinePowder extends Item
 	public ItemCrystallinePowder()
 	{
 		maxStackSize = 64;
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(LCCraft.LCCraftCreativeTab);
 	}	
 }
