@@ -39,8 +39,8 @@ public class BlockShimmeringWater extends BlockFluidClassic
     @Override
     public void registerBlockIcons(IIconRegister register) 
     {
-            stillIcon = register.registerIcon("modid:fluidStill");
-            flowingIcon = register.registerIcon("modid:fluidFlowing");
+            stillIcon = register.registerIcon("LCCraft:BlockShimmeringWater_still");
+            flowingIcon = register.registerIcon("LCCraft:BlockShimmeringWater_flow");
     }
     
       

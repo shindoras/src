@@ -44,7 +44,6 @@ public class LCCraft
     public static Item CrystallinePowder;
     
     //Fluids    
-    //public static Fluid FluidShimmeringWater;
     public static Block BlockShimmeringWater;
     
     //loads before event
@@ -56,7 +55,7 @@ public class LCCraft
     	
     	
     	
-		// some example code    	
+		    	
     }
     
     //loads during event
