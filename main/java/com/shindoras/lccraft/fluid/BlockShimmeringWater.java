@@ -1,5 +1,7 @@
 package com.shindoras.lccraft.fluid;
 
+import java.util.Random;
+
 import javax.swing.Icon;
 
 import com.shindoras.lccraft.LCCraft;
@@ -72,5 +74,6 @@ public class BlockShimmeringWater extends BlockFluidClassic
         }
             return super.displaceIfPossible(world, x, y, z);
     }
+    
     
 }
