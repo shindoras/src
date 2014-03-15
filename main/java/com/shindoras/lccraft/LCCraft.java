@@ -8,8 +8,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.fluids.Fluid;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -23,11 +26,15 @@ public class LCCraft
     public static final String NAME = "LightCrystalCraft";
     public static final String VERSION = "0.0.1";
     
+   
+    
     @SidedProxy(clientSide = "com.shindoras.lccraft.ClientProxy", serverSide = "com.shindoras.lccraft.ServerProxy")
     public static ServerProxy proxy;
     public static CreativeTabs LCCraftCreativeTab = new LCCraftCreativeTab("LCCraft");
     
-    
+   
+
+
     //Blocks
     public static Block CrystalOre;
     public static Block LightCrystal;
@@ -36,13 +43,17 @@ public class LCCraft
     //Items
     public static Item CrystallinePowder;
     
+    //Fluids    
+    //public static Fluid FluidShimmeringWater;
+    public static Block BlockShimmeringWater;
     
     //loads before event
     @EventHandler
     public void PreLoad(FMLPreInitializationEvent PreEvent)
     {
     	proxy.registerRendererThings();
-    	GameRegistry.registerTileEntity(MyTileEntity.class, "stringID");
+    	//GameRegistry.registerTileEntity(MyTileEntity.class, "stringID");
+    	
     	
     	
 		// some example code    	
