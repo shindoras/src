@@ -50,7 +50,6 @@ public class BlockLUProducer extends Block
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int metadata)
 	{	
-		System.out.println(metadata);
 		
 		if(metadata == 0){
 			switch(side)
@@ -114,7 +113,8 @@ public class BlockLUProducer extends Block
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase elb, ItemStack is)
     {
         int l = MathHelper.floor_double((double)(elb.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
-
+//        int k = MathHelper.floor_double((double)(elb.rotationPitch) ) ;
+//        System.out.println(k);
         if (l == 0)
         {
             world.setBlockMetadataWithNotify(x, y, z, 0, 2);
