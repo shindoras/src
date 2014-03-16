@@ -48,15 +48,15 @@ public class BlockShimmeringWater extends BlockFluidClassic
                 {
                     for (int j1 = p_149734_3_; j1 <= p_149734_3_ + 1; ++j1)
                     {
-                        if (p_149734_1_.getBlock(l, j1, i1) == Blocks.air)
-                        {
+//                        if (p_149734_1_.getBlock(l, j1, i1) == Blocks.air)
+//                        {
                             if (!p_149734_1_.isAirBlock((l - p_149734_2_) / 2 + p_149734_2_, j1, (i1 - p_149734_4_) / 2 + p_149734_4_))
                             {
                                 break;
                             }
 
-                            p_149734_1_.spawnParticle("enchantmenttable", (double)p_149734_2_ + 0.5D, (double)p_149734_3_ + 2.0D, (double)p_149734_4_ + 0.5D, (double)((float)(l - p_149734_2_) + p_149734_5_.nextFloat()) - 0.5D, (double)((float)(j1 - p_149734_3_) - p_149734_5_.nextFloat() - 1.0F), (double)((float)(i1 - p_149734_4_) + p_149734_5_.nextFloat()) - 0.5D);
-                        }
+                            p_149734_1_.spawnParticle("portal", (double)p_149734_2_ + 0.5D, (double)p_149734_3_ + 2.0D, (double)p_149734_4_ + 0.5D, (double)((float)(l - p_149734_2_) + p_149734_5_.nextFloat()) - 0.5D, (double)((float)(j1 - p_149734_3_) - p_149734_5_.nextFloat() - 1.0F), (double)((float)(i1 - p_149734_4_) + p_149734_5_.nextFloat()) - 0.5D);
+//                        }
                     }
                 }
             }

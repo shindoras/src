@@ -9,7 +9,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fluids.Fluid;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -40,8 +39,11 @@ public class LCCraft
     public static Block LightCrystal;
     public static Block LUProducer;
     
+    
+    
     //Items
     public static Item CrystallinePowder;
+    public static Item ShimmeringWaterBucket;
     
     //Fluids    
     public static Block BlockShimmeringWater;
