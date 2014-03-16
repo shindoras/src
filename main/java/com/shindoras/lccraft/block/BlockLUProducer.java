@@ -50,8 +50,10 @@ public class BlockLUProducer extends Block
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int metadata)
 	{	
+		//System.out.println(metadata);
 		
-		if(metadata == 0){
+		if(metadata == 0)
+		{
 			switch(side)
 			{
 				case 0: return downIcon;
@@ -62,7 +64,8 @@ public class BlockLUProducer extends Block
 				case 5: return leftIcon;
 			}
 		}
-		if(metadata == 1){
+		if(metadata == 1)
+		{
 			switch(side)
 			{
 				case 0: return downIcon;
@@ -73,7 +76,8 @@ public class BlockLUProducer extends Block
 				case 5: return frontIcon;
 			}
 		}
-		if(metadata == 2){
+		if(metadata == 2)
+		{
 			switch(side)
 			{
 				case 0: return downIcon;
@@ -84,7 +88,8 @@ public class BlockLUProducer extends Block
 				case 5: return rightIcon;
 			}
 		}
-		if(metadata == 3){
+		if(metadata == 3)
+		{
 			switch(side)
 			{
 				
@@ -101,18 +106,11 @@ public class BlockLUProducer extends Block
 											
 	}
 	
-//	@SideOnly(Side.CLIENT)
-//	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase p_149689_5_, ItemStack p_149689_6_)
-//	{
-//	    int metadata = world.getBlockMetadata(x, y, z);
-//	    playerDirection = MathHelper.floor_double((double)((p_149689_5_.rotationYaw * 4F) / 360F) + 0.5D) & 3;	    
-//	    System.out.println(playerDirection);
-//	    
-//	}
 	
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase elb, ItemStack is)
     {
         int l = MathHelper.floor_double((double)(elb.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+
 //        int k = MathHelper.floor_double((double)(elb.rotationPitch) ) ;
 //        System.out.println(k);
         if (l == 0)
@@ -140,35 +138,6 @@ public class BlockLUProducer extends Block
         }
 	
     }
-	
-	/*@SideOnly(Side.CLIENT)
-	private Icon[] icons;
-	
-	public void registerIIcon(IIconRegister par1)
-	{
-		icons = new Icon[6];
-		
-		for(int i = 0; i<icons.length; i++)
-		{
-			icons[i] = par1.registerIcon(LCCraft.MODID + ":" + "CrystalOre");
-		}	
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public IIcon getIIcon(int par1, int par2)
-	{
-		return icons[par2];
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
-	{
-		for(int i=0; i<6; i++)
-		{
-			par3List.add(new ItemStack());
-		}	
-	}*/
-	
 	
 
 }
