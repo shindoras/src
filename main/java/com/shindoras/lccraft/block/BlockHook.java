@@ -9,6 +9,7 @@ import com.shindoras.lccraft.LCCraft;
 import com.shindoras.lccraft.entity.TileEntityHook;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockTorch;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -17,7 +18,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockHook extends Block {
+public class BlockHook extends BlockContainer {
 
 	public BlockHook() {
 		super(Material.iron);
@@ -37,11 +38,6 @@ public class BlockHook extends Block {
 		return ICON;
 	}
 	
-	/*@Override
-	public TileEntity createNewTileEntity(World world){
-		return new TileEntityHook();
-	}*/
-	
 	@Override
 	public boolean renderAsNormalBlock(){
 		return false;
@@ -54,5 +50,11 @@ public class BlockHook extends Block {
 		
 	public int getRenderType(){
 		return -1;
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World var1, int var2) {
+		
+		return new TileEntityHook();
 	}
 }
