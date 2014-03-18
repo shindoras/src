@@ -35,22 +35,5 @@ public class ItemShimmeringWaterBucket extends ItemBucket {
     	}
     
     }
-<<<<<<< Updated upstream
-=======
-	/** 
-	 * TODO 
-	 * Weg finden den Eimer beim abschliessen des rezeptes verschwinden zu lassen
-	 * **/
-	public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
-    	Container test = par3EntityPlayer.openContainer;
-    	this.doesContainerItemLeaveCraftingGrid(par1ItemStack);
-    	for(int i = 0; i <= test.inventoryItemStacks.size(); i++){
-    		if(test.getSlot(i).getStack().getItem() == Items.water_bucket){
-   			test.getSlot(i).decrStackSize(1);
- 			return;
-    		}
-    	}
-    }
->>>>>>> Stashed changes
 
 }
