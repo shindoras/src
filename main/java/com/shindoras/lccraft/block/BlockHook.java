@@ -22,6 +22,7 @@ public class BlockHook extends BlockContainer {
 
 	public BlockHook() {
 		super(Material.iron);
+		this.setBlockBounds(1F/16F*6, 1F/16F*3, 0F, 1F-1F/16F*6, 1F-1F/16F*3.5F, 1F);
 		this.setCreativeTab(LCCraft.LCCraftCreativeTab);
 		// TODO Auto-generated constructor stub
 	}
