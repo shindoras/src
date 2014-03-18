@@ -12,8 +12,10 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.shindoras.lccraft.block.*;
+import com.shindoras.lccraft.entity.TileEntityHook;
 import com.shindoras.lccraft.fluid.BlockShimmeringWater;
 import com.shindoras.lccraft.item.*;
+import com.shindoras.lccraft.renderer.RenderBlockHook;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -31,7 +33,10 @@ public class ClientProxy extends ServerProxy
     	GameRegistry.registerBlock(LCCraft.LightCrystal, BlockMultiLightCrystal.class, LCCraft.MODID + LCCraft.LightCrystal.getUnlocalizedName());
     	LCCraft.LUProducer = new BlockLUProducer().setBlockName("LUProducer");  //.setBlockTextureName(LCCraft.MODID + ":" + "CrystalOre").setHardness(3.5F);
     	GameRegistry.registerBlock(LCCraft.LUProducer, LCCraft.MODID + LCCraft.LUProducer.getUnlocalizedName());    	
-    	//LanguageRegistry.addName(CrystalOre, "Crystal Ore");
+    	LCCraft.Hook = new BlockHook().setBlockName("Hook");//.setBlockTextureName(LCCraft.MODID + ":" + "Hook").setHardness(3.5F);
+    	GameRegistry.registerBlock(LCCraft.Hook, LCCraft.MODID + LCCraft.Hook.getUnlocalizedName());
+    	LCCraft.Line = new BlockLine().setBlockName("Line").setBlockTextureName(LCCraft.MODID + ":" + "Line").setHardness(1.0F);
+    	GameRegistry.registerBlock(LCCraft.Line, LCCraft.MODID + LCCraft.Line.getUnlocalizedName());
     	    	
     	//Fluids
     	Fluid FluidShimmeringWater = new Fluid("fluidshimmeringwater");    	
@@ -46,6 +51,9 @@ public class ClientProxy extends ServerProxy
     	LCCraft.ShimmeringWaterBucket = new ItemShimmeringWaterBucket(LCCraft.BlockShimmeringWater).setUnlocalizedName("ShimmeringWaterBucket").setContainerItem(Items.bucket).setTextureName(LCCraft.MODID + ":" + "bucket_shimmeringWater");
 		GameRegistry.registerItem(LCCraft.ShimmeringWaterBucket, LCCraft.MODID + LCCraft.ShimmeringWaterBucket.getUnlocalizedName());
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("fluidshimmeringwater", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(LCCraft.ShimmeringWaterBucket), new ItemStack(Items.bucket));
+		
+		//Renderers
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityHook.class, new RenderBlockHook());
 		
 		//Handlers
 		LCCraftBucketHandler.INSTANCE.buckets.put(LCCraft.BlockShimmeringWater, LCCraft.ShimmeringWaterBucket);

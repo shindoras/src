@@ -38,6 +38,8 @@ public class LCCraft
     public static Block CrystalOre;
     public static Block LightCrystal;
     public static Block LUProducer;
+    public static Block Hook;
+    public static Block Line;
     
     
     
